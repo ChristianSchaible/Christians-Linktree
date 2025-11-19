@@ -11,10 +11,9 @@ import Christian from "@components/Header.astro"
 
 <Layout title="Astro Starter">
   <section class="body">
-    <div class="header">
- <h1 class="intro">Hi there, I'm</h1>
-  <Christian/>
-
+    <div class="main-header">
+      <h1 class="intro">Hi there, I'm</h1>
+      <Christian/>
     </div>
  
     <Linkgroup/>
@@ -34,10 +33,12 @@ import Christian from "@components/Header.astro"
     min-height: 100vh;
     padding: 2rem 1rem;
     margin: 0 5rem;
+  }
+  .main-header {
+    display: flex;
+    flex-direction: column;
+
     
-
-
-
   }
   .intro {
     font-family: var(--font-headings);
