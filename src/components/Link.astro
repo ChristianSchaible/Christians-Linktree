@@ -1,0 +1,38 @@
+---
+const {data} = Astro.props;
+---
+<a class="link" href={data.url}>
+    <img class="link-image"
+  src={data.image}
+  alt={data.title}/>
+    <h1> {data.title}   </h1> 
+     <p> {data.description} </p>
+
+
+</button>
+
+
+<style>
+    .link {
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        background-color: white;
+        padding: 1rem;
+        border: 1px solid red;
+        border-radius: 10px;
+        height: fit-content;
+        width: fit-content;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        background-color: white;
+        border: 1px red solid;
+        color: red;
+        transition: all .5s linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1);
+        scale: 1.1;
+
+    }
+</style>

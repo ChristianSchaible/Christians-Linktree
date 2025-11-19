@@ -1,0 +1,24 @@
+---
+import Link from "./Link.astro"
+import Image from "@assets"
+
+const links = [
+    {title: 'Portfolio', url: "https://christianschaible.work", description: "", image:""},
+    {title: 'Thesis Form', url: "https://forms.office.com/r/SNP2PQn1w2", description: "Share your experiences with the systems in your life. Your responses help shape my thesis, which explores how people relate to—and resist—the structures we move through every day. Takes 2 minutes.", image:""},
+    {title: 'Behance', url: "https://www.behance.net/christischaibl2", description: "", image:""},
+];
+---
+<div class="links">
+{links.map(function(link){
+    return <Link data={link}/>
+})}
+</div>
+
+<style> 
+    .links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+</style>
