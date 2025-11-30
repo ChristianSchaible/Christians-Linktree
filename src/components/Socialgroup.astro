@@ -1,0 +1,33 @@
+---
+import Social from "./Social.astro"
+import Instagram from "@assets/images/instagram.svg"
+import Linkedin from "@assets/images/linkedin.svg"
+import Vimeo from "@assets/images/vimeo.svg"
+import Youtube from "@assets/images/youtube.svg"
+const links = [
+    {title: 'Instagram', url: "https://christianschaible.work", description: "", image:Instagram},
+    {title: 'Linkedin', url: "https://linkedin.com/in/christian-schaible-4610a138b", description: "Share your experiences with the systems in your life. Your responses help shape my thesis, which explores how people relate to—and resist—the structures we move through every day. Takes 2 minutes.", image:Linkedin},
+    {title: 'Youtube', url: "https://www.youtube.com/@firechild.", description:"", image:Youtube },
+    {title: 'Vimeo', url: "https://vimeo.com/user248277352", description: "", image:Vimeo},
+];
+
+
+---
+<div class="links">
+{links.map(function(link){
+    return <Social data={link}/>
+})}
+</div>
+
+<style>
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+    }
+
+</style>

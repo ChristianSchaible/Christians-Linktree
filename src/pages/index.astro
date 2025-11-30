@@ -7,19 +7,21 @@ import { Content as SampleMarkdown } from "@content/sample-markdown.md";
 import { Image } from "astro:assets";
 import Linkgroup from "@components/Linkgroup.astro";  
 import Christian from "@components/Header.astro"
+import Socialgroup from "@components/Socialgroup.astro";
+import Animation from "@components/Animation.astro";
 ---
 
 <Layout title="Astro Starter">
+  <Animation/>
   <section class="body">
     <div class="main-header">
       <h1 class="intro">Hi there, I'm</h1>
       <Christian/>
     </div>
- 
-    <Linkgroup/>
-
-
-
+    <div class="links">
+        <Socialgroup/>
+         <Linkgroup/>
+    </div>
   </section>
 
 </Layout>
@@ -31,23 +33,38 @@ import Christian from "@components/Header.astro"
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 2rem 1rem;
-    margin: 0 5rem;
+    width: 100%;
+    max-width: var(--size-page-width);
+    padding: 0;
+
   }
   .main-header {
     display: flex;
     flex-direction: column;
-
+    
     
   }
   .intro {
     font-family: var(--font-headings);
-    font-size: 2rem;
+    font-size: 1.3rem;
     text-align: left;
+
     margin-top: 2rem;
     margin-bottom: 1rem;
     color: var(--color-text);
-    font-weight: 600;
+    animation: intro 2s infinite alternate;
 
-    
   }
+
+  @media (max-width: 420px) {
+    .intro { font-size: 1.1rem; }
+  }
+
+@keyframes intro {
+  0%{
+     font-weight: 600;  
+  }
+  100% {
+    font-weight: 700;
+  }
+}

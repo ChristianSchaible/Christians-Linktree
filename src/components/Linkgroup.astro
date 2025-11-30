@@ -1,11 +1,15 @@
 ---
 import Link from "./Link.astro"
-import Image from "@assets"
+import Portfolio from "@assets/images/Portfolio.jpg"
+import Thesis from "@assets/images/Pechakucha-Linktree.jpg"
+
+
 
 const links = [
-    {title: 'Portfolio', url: "https://christianschaible.work", description: "", image:""},
-    {title: 'Thesis Form', url: "https://forms.office.com/r/SNP2PQn1w2", description: "Share your experiences with the systems in your life. Your responses help shape my thesis, which explores how people relate to—and resist—the structures we move through every day. Takes 2 minutes.", image:""},
-    {title: 'Behance', url: "https://www.behance.net/christischaibl2", description: "", image:""},
+    {title: 'Portfolio', url: "https://christianschaible.work", description: "My Portfolio has all my work in one place so you can poke around and see what I’ve been making lately!", image:Portfolio},
+    {title: 'Thesis Form', url: "https://forms.office.com/r/SNP2PQn1w2", description: "Want to help me with my thesis? Share your personal \"rules\" that shape your creative practice! Only takes around 2 minutes!", image:Thesis},
+    {title: 'Behance', url: "https://www.behance.net/christischaibl2", description: "Check out my Behance to see the full breakdown of my projects and process.", image:""},
+    {title: 'Buy me a Coffee!', url: "https://www.buymeacoffee.com/christianschaible", description: "If you like my work and want to support me, consider buying me a coffee! Your support helps me continue creating :)", image:""},
 ];
 ---
 <div class="links">
@@ -15,10 +19,19 @@ const links = [
 </div>
 
 <style> 
-    .links {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1rem;
+        .links {
+                 display: grid;
+            grid-template-columns: 1fr 1fr; 
+                gap: 1rem;
+                margin: 2rem auto;
+                width: 100%;
+                max-width: min(100%, var(--size-page-width));
+    }
+    @media (max-width: 800px) {
+        .links {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+            margin: 1rem auto;
+        }
     }
 </style>
